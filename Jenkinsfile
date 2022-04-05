@@ -1,7 +1,4 @@
 pipeline {
-  agent {
-    label { 'node12' }
-  }
   options {
     parallelsAlwaysFailFast()
     skipDefaultcheckout()
@@ -29,7 +26,6 @@ pipeline {
         	
     stage('docker'){
       when {branch 'main'}
-      agent {label 'docker'}
       steps {
         scripts {
           cleanws()
