@@ -13,7 +13,7 @@ pipeline {
     }
     stage('install'){
       steps {
-        scripts {
+        script {
           if (env.BRANCH_NAME.contains('main')){
             base = "origin/${env.BRANCH_NAME}" ;
           }
@@ -23,15 +23,17 @@ pipeline {
     }
     stage('app build'){
       steps {
-        echo "running build"
-        sh "ng build"
+        script {
+          echo "running build"
+          sh "ng build"
+        }
       }
     }
         	
     stage('docker'){
       when {branch 'main'}
       steps {
-        scripts {
+        script {
           cleanws()
           sh "docker build -t angularhello/${env.BRANCH_NAME}"
         }
