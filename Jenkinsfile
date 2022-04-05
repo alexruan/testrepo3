@@ -32,7 +32,7 @@ pipeline {
       steps {
         script {
           sh "docker build -t angularhello/main ."
-          cleanws()
+          cleanWs()
         }
       }
     }
