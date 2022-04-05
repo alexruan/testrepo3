@@ -13,10 +13,12 @@ pipeline {
     }
     stage('install'){
       steps {
-        if (env.BRANCH_NAME.contains('main')){
-          base = "origin/${env.BRANCH_NAME}" ;
+        scripts {
+          if (env.BRANCH_NAME.contains('main')){
+            base = "origin/${env.BRANCH_NAME}" ;
+          }
+          sh "node -v && npm -v && npm ci"
         }
-        sh "node -v && npm -v && npm ci"
       }
     }
     stage('app build'){
