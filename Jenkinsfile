@@ -14,7 +14,7 @@ pipeline {
     stage('install'){
       steps {
         script {
-          echo ${env.BRANCH_NAME}
+          echo "${env.BRANCH_NAME}"
           sh "node -v && npm -v && npm ci"
         }
       }
