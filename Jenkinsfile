@@ -1,8 +1,9 @@
+#!groovy
 pipeline {
   agent any
   options {
     parallelsAlwaysFailFast()
-    skipDefaultcheckout()
+    skipDefaultCheckout()
   }
   stages {
     stage('checkout') {
