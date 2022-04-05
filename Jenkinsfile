@@ -32,8 +32,8 @@ pipeline {
       when {branch 'main'}
       steps {
         script {
-          cleanws()
           sh "docker build -t angularhello/${env.BRANCH_NAME}"
+          cleanws()
         }
       }
     }
