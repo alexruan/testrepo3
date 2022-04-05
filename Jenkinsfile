@@ -31,7 +31,7 @@ pipeline {
     stage('docker'){
       steps {
         script {
-          sh "docker build -t angularhello/${env.BRANCH_NAME}"
+          sh "docker build -t angularhello/main"
           cleanws()
         }
       }
