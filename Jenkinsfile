@@ -14,7 +14,7 @@ pipeline {
     }
     stage('install'){
       steps {
-        if (env.BRANCH_NAME.contains('master')){
+        if (env.BRANCH_NAME.contains('main')){
           base = "origin/${env.BRANCH_NAME}" ;
         }
         sh "node -v && npm -v && npm ci"
@@ -28,7 +28,7 @@ pipeline {
     }
         	
     stage('docker'){
-      when {branch 'master'}
+      when {branch 'main'}
       agent {label 'docker'}
       steps {
         scripts {
