@@ -29,7 +29,7 @@ pipeline {
     }
         	
     stage('docker'){
-      when { branch 'origin/main' }
+      when { branch pattern: "*main*" , comparator: "REGEXP"}
       steps {
         script {
           sh "docker build -t angularhello/${env.BRANCH_NAME}"
