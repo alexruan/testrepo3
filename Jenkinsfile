@@ -14,9 +14,7 @@ pipeline {
     stage('install'){
       steps {
         script {
-          if (env.BRANCH_NAME.contains('main')){
-            base = "origin/${env.BRANCH_NAME}" ;
-          }
+          echo ${env.BRANCH_NAME}
           sh "node -v && npm -v && npm ci"
         }
       }
