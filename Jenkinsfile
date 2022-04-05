@@ -29,7 +29,7 @@ pipeline {
     }
         	
     stage('docker'){
-      when {branch 'main'}
+      when { branch 'origin/main' }
       steps {
         script {
           sh "docker build -t angularhello/${env.BRANCH_NAME}"
