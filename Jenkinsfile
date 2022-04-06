@@ -19,7 +19,7 @@ pipeline {
         script {
           if (env.BRANCH_NAME.contains('multi')){
             base = "origin/${env.BRANCH_NAME}"
-            echo ${base}
+            echo "${base}"
           }
           echo "${env.BRANCH_NAME}"
           sh "node -v && npm -v && npm ci"
