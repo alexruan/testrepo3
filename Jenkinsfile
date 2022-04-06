@@ -40,7 +40,6 @@ pipeline {
         	
     stage('docker'){
       when { branch 'multi' }
-      agent { label 'docker' }
       steps {
         script {
           imageName="agularhello/${env.BRANCH_NAME}"
