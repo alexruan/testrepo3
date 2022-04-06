@@ -42,7 +42,7 @@ pipeline {
       when { branch 'multi' }
       steps {
         script {
-          imageName="agularhello/${env.BRANCH_NAME}"
+          imageName="angularhello/${env.BRANCH_NAME}"
           imageTag = env.BRANCH_NAME.replaceAll('/','-')
           sh "docker build -t ${imageName} ."
           cleanWs()
