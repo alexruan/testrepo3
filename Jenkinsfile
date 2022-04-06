@@ -17,7 +17,7 @@ pipeline {
       when { branch 'multi' }
       steps {
         script {
-          if (env.BRANCH_NAME.contains('develop')){
+          if (env.BRANCH_NAME.contains('multi')){
             base = "origin/${env.BRANCH_NAME}"
             echo ${base}
           }
