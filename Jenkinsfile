@@ -53,8 +53,10 @@ pipeline {
   }
 
   post {
-    echo "Job: ${env.JOB_NAME}"
-    echo "Status:  ${curentBuild.currentResult}"
-    echo "Build number ${env.BUILD_NUMBER} "
+    always {
+      echo "Job: ${env.JOB_NAME}"
+      echo "Status:  ${curentBuild.currentResult}"
+      echo "Build number ${env.BUILD_NUMBER} "
+    }
   }
 }
